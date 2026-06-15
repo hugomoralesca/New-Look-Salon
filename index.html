@@ -33,11 +33,21 @@
         body { font-family: 'Montserrat', sans-serif; background-color: #121212; color: #F5F5F5; scroll-behavior: smooth; }
         .font-barber { font-family: 'Oswald', sans-serif; }
         
-        /* --- AJUSTE AQUÍ: Degradado MUCHO más sutil y transparente --- */
+        /* --- AJUSTE PANORÁMICO: Completo y alejado en celulares --- */
         .hero-bg {
             background: linear-gradient(to right, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.2) 100%), url('barber-hero.png');
-            background-size: cover;
-            background-position: center 40%;
+            background-color: #121212;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        /* En pantallas grandes (PC/Tablets) se expande de forma elegante */
+        @media (min-width: 768px) {
+            .hero-bg {
+                background-size: cover;
+                background-position: center 40%;
+            }
         }
         
         .letter-track { letter-spacing: 0.15em; }
@@ -222,7 +232,7 @@
         <h2 class="font-barber text-3xl font-bold uppercase tracking-wider text-white mb-2">Location in Los Angeles</h2>
         <p class="text-xs text-gray-400 mb-6">4004 S Vermont Ave Suite #1 #2, Los Angeles, CA 90037</p>
         <div class="w-full overflow-hidden shadow-2xl max-w-4xl mx-auto aspect-[16/9] md:aspect-[21/9] border border-white/5">
-            <iframe src="https://maps.google.com/maps?q=4004%20S%20Vermont%20Ave%20Los%20Angeles%20CA%2090037&t=&z=15&ie=UTF-8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://maps.google.com/maps?q=4004%20S%20Vermont%20Ave%20Suite%20%231%20%232,%20Los%20Angeles,%20CA%2090037&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
