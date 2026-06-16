@@ -33,20 +33,28 @@
         body { font-family: 'Montserrat', sans-serif; background-color: #121212; color: #F5F5F5; scroll-behavior: smooth; }
         .font-barber { font-family: 'Oswald', sans-serif; }
         
-        /* --- AJUSTE PANORÁMICO: Completo y alejado en celulares --- */
+        /* --- OPTIMIZACIÓN EN CELULARES: Sin espacios negros + Efecto alejado --- */
         .hero-bg {
-            background: linear-gradient(to right, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.2) 100%), url('barber-hero.png');
-            background-color: #121212;
-            background-size: contain;
-            background-repeat: no-repeat;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.6) 0%, rgba(18, 18, 18, 0.3) 100%), url('barber-hero.png');
+            background-size: cover;
             background-position: center center;
+            background-repeat: no-repeat;
+            height: auto;
+            aspect-ratio: 4 / 3; /* Le da forma panorámica natural al cuadro en celulares */
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
         }
 
-        /* En pantallas grandes (PC/Tablets) se expande de forma elegante */
+        /* En pantallas grandes (PC/Tablets) vuelve a su formato de pantalla completa elegante */
         @media (min-width: 768px) {
             .hero-bg {
+                background: linear-gradient(to right, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.2) 100%), url('barber-hero.png');
                 background-size: cover;
                 background-position: center 40%;
+                height: calc(100vh - 96px);
+                aspect-ratio: auto;
+                padding-top: 0;
+                padding-bottom: 0;
             }
         }
         
@@ -84,20 +92,20 @@
         </div>
     </nav>
 
-    <section class="hero-bg h-[calc(100vh-96px)] flex items-center px-6 lg:px-24">
+    <section class="hero-bg flex items-center px-6 lg:px-24">
         <div class="max-w-3xl text-white">
             <span class="text-xs uppercase letter-track font-semibold text-barber-gold bg-white/5 px-3 py-1 inline-block border border-white/10 mb-3">Top-Rated Local Barbershop & Salon</span>
-            <h1 class="font-barber text-5xl md:text-7xl font-bold tracking-wide uppercase leading-none mb-6">
+            <h1 class="font-barber text-4xl md:text-7xl font-bold tracking-wide uppercase leading-none mb-4 md:mb-6">
                 Fresh Cuts. <br><span class="text-barber-gold">Flawless Style.</span>
             </h1>
-            <p class="font-sans text-sm md:text-base font-light tracking-wide max-w-md opacity-90 mb-8 leading-relaxed text-gray-300">
+            <p class="font-sans text-xs md:text-base font-light tracking-wide max-w-md opacity-90 mb-6 md:mb-8 leading-relaxed text-gray-300">
                 Tu estilo ideal en Los Ángeles. Confía en profesionales para cortes modernos de caballero, barbería clásica, peinados y cuidado del cabello para dama.
             </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="https://wa.me/13236763122" target="_blank" class="bg-barber-gold hover:bg-yellow-600 text-barber-dark px-8 py-3.5 text-xs uppercase letter-track font-bold inline-flex items-center gap-3 transition shadow-lg">
+            <div class="flex flex-wrap gap-3 md:gap-4">
+                <a href="https://wa.me/13236763122" target="_blank" class="bg-barber-gold hover:bg-yellow-600 text-barber-dark px-6 py-3 md:px-8 md:py-3.5 text-xs uppercase letter-track font-bold inline-flex items-center gap-3 transition shadow-lg">
                     Book via WhatsApp
                 </a>
-                <a href="tel:+13236763122" class="border border-white/30 hover:border-white text-white px-8 py-3.5 text-xs uppercase letter-track font-medium inline-flex items-center transition">
+                <a href="tel:+13236763122" class="border border-white/30 hover:border-white text-white px-6 py-3 md:px-8 md:py-3.5 text-xs uppercase letter-track font-medium inline-flex items-center transition">
                     Call: (323) 676-3122
                 </a>
             </div>
@@ -232,7 +240,7 @@
         <h2 class="font-barber text-3xl font-bold uppercase tracking-wider text-white mb-2">Location in Los Angeles</h2>
         <p class="text-xs text-gray-400 mb-6">4004 S Vermont Ave Suite #1 #2, Los Angeles, CA 90037</p>
         <div class="w-full overflow-hidden shadow-2xl max-w-4xl mx-auto aspect-[16/9] md:aspect-[21/9] border border-white/5">
-            <iframe src="https://maps.google.com/maps?q=4004%20S%20Vermont%20Ave%20Suite%20%231%20%232,%20Los%20Angeles,%20CA%2090037&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="http://googleusercontent.com/maps.google.com/3" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
